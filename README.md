@@ -1,2 +1,2 @@
 # practicasWeb
-practicas para mis alumnos de prog. web
+practicas para mis alumnos de prog. web...
