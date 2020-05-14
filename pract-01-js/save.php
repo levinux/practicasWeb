@@ -1,18 +1,22 @@
 <?php
-include("const.php");
+require "config.php";
+require "functions.php";
 
 if(!isset($_POST['save'])) {
   echo "-1";
   return;
 }
 
-$id = $_POST['id'];
 $nom = $_POST['nom'];
 $depto = $_POST['depto'];
 
 $db = opendb();
-$db->exec(sprintf($insertRegs, $id, $nom, $depto));
-$db->close();
+$st = $db->prepare($insertRegs);
+$st->bindParam(1, $nom);
+$st->bindParam(2, $depto);
+$st->execute();
+
+echo "$insertRegs\n";
 echo "0";
 
 ?>

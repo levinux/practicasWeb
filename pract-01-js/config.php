@@ -1,11 +1,12 @@
 <?php
 
-$db = "EmpresaPatito";
 $dbuser = "levinux";
 $dbpass = "mocoseco";
+$dbname = "EmpresaPatito";
+$dsn = "mysql:host=localhost;dbname=" . $dbname;
 
-$insertRegs = "insert into empleados values(?, ?, ?)";
-$selectRegs = "select nombre, depto from empleados where id=?";
+$insertRegs = "insert into empleados(nombre,depto) values(?, ?)";
+$selectRegs = "select id, nombre, depto from empleados";
 $deleteRegs = "delete from empleados where id=?";
 $updateRegs = "update empleados set nombre=? where id=?";
 
